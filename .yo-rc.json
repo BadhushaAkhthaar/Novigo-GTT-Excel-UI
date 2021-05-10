@@ -1,0 +1,16 @@
+{
+  "generator-easy-ui5": {
+    "projectname": "gttui",
+    "namespace": "com.novigo",
+    "platform": "SAP HTML5 Application Repository service for SAP BTP",
+    "viewtype": "XML",
+    "viewname": "MainView",
+    "ui5libs": "Content delivery network (SAPUI5)",
+    "newdir": true,
+    "namespaceURI": "com/novigo",
+    "uimodules": [
+      "uimodule"
+    ],
+    "setupCompleted": true
+  }
+}
