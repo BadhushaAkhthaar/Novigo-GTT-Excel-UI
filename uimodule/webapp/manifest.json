@@ -8,7 +8,28 @@
       "version": "1.0.0"
     },
     "title": "{{appTitle}}",
-    "description": "{{appDescription}}"
+    "description": "{{appDescription}}",
+    "crossNavigation":{
+      "inbounds":{
+        "intent1":{
+          "signature":{
+            "parameters":{},
+            "additionalParameters":"allowed"
+          },
+          "semanticObject":"data",
+          "action":"display",
+          "title":"{{appTitle}}",
+          "description":"{{appDescription}}",
+          "icon":"sap-icon://shipping-status"
+        }
+      }
+    },
+    "dataSources": {
+      "restService":{
+        "uri": "/shipment_backend",
+        "type": "JSON"
+      }
+    }
   },
   "sap.ui": {
     "technology": "UI5",
