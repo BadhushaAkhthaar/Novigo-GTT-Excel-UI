@@ -1,22 +1,49 @@
- <mvc:View controllerName="com.novigo.gttui.controller.MainView"
-  displayBlock="true"
-  xmlns="sap.m"
-  xmlns:l="sap.ui.layout"
-  xmlns:mvc="sap.ui.core.mvc"
-  xmlns:u="sap.ui.unified">
-  <App id="idAppControl" >
+<mvc:View controllerName="com.novigo.gttui.controller.MainView" displayBlock="true" xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" xmlns:u="sap.ui.unified">
+  <App id="idAppControl">
+    <!-- <l:BlockLayout id="BlockLayoutTwo">
+      <l:BlockLayoutRow>
+        <l:BlockLayoutCell id="cell-1" title="Excel Upload" backgroundColorSet="ColorSet5" backgroundColorShade="ShadeA">
+          <FlexBox height="100%" alignItems="Center" justifyContent="End">
+            <VBox>
+              <layoutData>
+                <FlexItemData growFactor="3" />
+              </layoutData>
+              <u:FileUploader id="fileUploader" name="myFileUpload" uploadUrl="/shipment_backend/" tooltip="Upload your file to the local server" uploadComplete="handleUploadComplete" icon="sap-icon://upload" iconFirst="true" style="Emphasized" change="onUpload" />
+              <Button text="Upload File" press="handleUploadPress" />
+            </VBox>
+          </FlexBox>
+        </l:BlockLayoutCell>
+      </l:BlockLayoutRow>
+    </l:BlockLayout> -->
     <pages>
-      <Page title="{i18n>title}">
+      <Page title="{i18n>title}" id="excelUploadPage">
         <content>
-          <l:VerticalLayout>
-		        <u:FileUploader
-            id="fileUploader"
-            name="myFileUpload"
-            uploadUrl="upload/"
-            tooltip="Upload your file to the local server"
-            uploadComplete="handleUploadComplete"
-            icon="sap-icon://upload" iconFirst="true" style="Emphasized" change="onUpload"/>
-	        </l:VerticalLayout>
+          <!-- <l:VerticalLayout>
+            <u:FileUploader id="fileUploader" name="myFileUpload" uploadUrl="/shipment_backend/" tooltip="Upload your file to the local server" uploadComplete="handleUploadComplete" icon="sap-icon://upload" iconFirst="true" style="Emphasized" change="onUpload" />
+          </l:VerticalLayout> -->
+          <l:BlockLayout id="BlockLayoutTwo">
+            <l:BlockLayoutRow>
+              <l:BlockLayoutCell id="cell-1" title="Excel Upload" backgroundColorSet="ColorSet5" backgroundColorShade="ShadeA">
+                <FlexBox height="100%" alignItems="Center" justifyContent="End">
+                  <VBox>
+                    <layoutData>
+                      <FlexItemData growFactor="3" />
+                    </layoutData>
+                    <u:FileUploader id="fileUploader" name="myFileUpload" uploadUrl="/shipment_backend/" tooltip="Upload your file to the local server" uploadComplete="handleUploadComplete" icon="sap-icon://upload" iconFirst="true" style="Emphasized" change="onUpload" />
+                    <Button text="Upload File" press="handleUploadPress" />
+                  </VBox>
+                </FlexBox>
+              </l:BlockLayoutCell>
+            </l:BlockLayoutRow>
+          </l:BlockLayout>
+          <MessageView items="{message>/}">
+            <MessageItem
+              type="{message>type}"
+              title="{message>message}"
+              subtitle="{message>additionalText}"
+              description="{message>description}">
+            </MessageItem>
+          </MessageView>
         </content>
       </Page>
     </pages>
